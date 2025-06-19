@@ -141,7 +141,7 @@
             const skills = Array.from(skillElements).map(el => el.textContent?.trim()).filter(Boolean).join(', ');
             
             // Create the prompt with job details
-            const prompt = `Prepare bid proposal for me for this freelance job:
+            const prompt = `Prepare bid proposal for me for this freelance job with 1400 charecter max:
 
 Title: ${jobTitle}
 ${budget ? `Budget: ${budget}` : ''}
