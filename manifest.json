@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Freelancer Bid Preparer",
+  "version": "1.0",
+  "description": "Adds a 'Prepare Bid' button to Freelancer.com job posts that opens ChatGPT with a bid preparation prompt",
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.freelancer.com/*",
+    "https://freelancer.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.freelancer.com/projects/*",
+        "https://freelancer.com/projects/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Freelancer Bid Preparer"
+  },
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128": "128.png"
+  }
+}
